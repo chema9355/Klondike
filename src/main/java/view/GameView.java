@@ -81,7 +81,7 @@ public class GameView implements View {
 	}
 
 	public void atender(ExitController exitController) {
-		new ExitView().render();
+		new ExitView(exitController).render();
 	}
 
 	public void atender(TurnOverController turnOverController) {
