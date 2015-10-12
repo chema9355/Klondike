@@ -29,6 +29,10 @@ public class Stair implements StairForView {
 		cards.get(stair).add(card);
 	}
 
+	public void removeLast(int stair) {
+		cards.get(stair).remove(cards.get(stair).size() - 1);
+	}
+
 	public Map<Integer, List<Card>> getCards() {
 		return this.cards;
 	}
