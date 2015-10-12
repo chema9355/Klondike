@@ -22,7 +22,7 @@ public class FromDeckToDiscardView {
 		else
 		{
 			card = this.fromDeckToDiscardController.getCardFromDeck();
-			this.fromDeckToDiscardController.moveFroDeckToDiscard(card);
+			this.fromDeckToDiscardController.moveFromDeckToDiscard(card);
 			System.out.println("Carta movida de bajara a descarte");
 		}
 		System.out.println("");

@@ -1,6 +1,7 @@
 package controller;
 
 
+import model.Card;
 import model.Deck;
 import model.Stair;
 import model.Suit;
@@ -14,7 +15,33 @@ public class FromSuitToStairController extends MoveController{
 
 	@Override
 	public void recibir(GameView gameView) {
-			gameView.atender(this);
+		gameView.atender(this);
+	}
+
+	public boolean isPosibleMove(int suit, int stair) {
+		Card suitCard;
+		Card stairCard;
+		if(this.getSuit().isEmpty(suit))
+		{
+		return false;
+		}
+		else 
+		{
+		stairCard = this.getStair().lastCard(stair);
+		suitCard = this.getSuit().lastCard(suit);
+		if (suitCard.connect(stairCard))
+			{
+				return true;
+			}
+		}
+		return false;		
+	}
+
+	public void moveFromSuitToStair(int suit, int stair) {
+		Card suitCard;
+		suitCard = this.getSuit().lastCard(suit);
+		this.getStair().putCard(suitCard, stair);
+		this.getSuit().removeLast(suit);
 	}
 
 }

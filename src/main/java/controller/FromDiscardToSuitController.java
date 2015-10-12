@@ -1,12 +1,9 @@
 package controller;
 
-
-
 import model.Card;
 import model.Deck;
 import model.Stair;
 import model.Suit;
-import model.Type;
 import view.GameView;
 
 public class FromDiscardToSuitController extends MoveController{
@@ -15,19 +12,19 @@ public class FromDiscardToSuitController extends MoveController{
 		super(deck, discard, stair, suit);
 	}
 	
-	public void move (Card discardCard, Card suitCard){
+	public void moveFromDiscardToSuit (Card discardCard, Card suitCard){
 		this.getDiscard().removeCard(discardCard);
 		this.getSuit().AddCard(discardCard, discardCard.getType());
 	}
 	
-	public boolean isPosiblePut (Card discardCard, Card suitCard){
-		if (this.getSuit().isEmpty(discardCard.getType()) && discardCard.getValue()=='A')
+	public boolean isPosibleMove (Card discardCard, Card suitCard){
+		if(this.getSuit().isEmpty(discardCard.getType()) && discardCard.getValue()=='A')
 		{
 			return true;
 		}
 		else
 		{
-			if (suitCard.connect(discardCard))
+			if (suitCard.connect(discardCard) && suitCard.sameSuit(discardCard))
 			{
 				return true;
 			}

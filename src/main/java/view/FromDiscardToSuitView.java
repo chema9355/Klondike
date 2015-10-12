@@ -23,9 +23,9 @@ private FromDiscardToSuitController fromDiscardToSuitController;
 		else
 		{
 			this.fromDiscardToSuitController.getCards(discardCard, suitCard);
-			if (this.fromDiscardToSuitController.isPosiblePut(discardCard, suitCard))
+			if (this.fromDiscardToSuitController.isPosibleMove(discardCard, suitCard))
 			{
-				this.fromDiscardToSuitController.move(discardCard, suitCard);
+				this.fromDiscardToSuitController.moveFromDiscardToSuit(discardCard, suitCard);
 			}	
 			else
 			{

@@ -21,7 +21,11 @@ public class FromStairToStairController extends MoveController{
 	public boolean isPosibleMove(int originStair, int destinationStair) {
 		Card originStairCard;
 		Card destinationStairCard;
-		if (this.getStair().isEmpty(destinationStair))
+		if(this.getStair().isEmpty(originStair))
+		{
+			return false;
+		}
+		else if (this.getStair().isEmpty(destinationStair))
 		{
 			return true;
 		}

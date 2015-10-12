@@ -1,7 +1,5 @@
 package controller;
 
-
-
 import model.Deck;
 import model.Stair;
 import model.Suit;

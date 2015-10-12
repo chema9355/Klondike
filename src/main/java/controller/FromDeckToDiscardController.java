@@ -17,7 +17,7 @@ public class FromDeckToDiscardController extends DeckAndDiscardController{
 		return this.getDeck().getLastCard();
 	}
 	
-	public void moveFroDeckToDiscard(Card card){
+	public void moveFromDeckToDiscard(Card card){
 		this.getDeck().removeCard(card);
 		this.getDiscard().put(card);
 		card.changeState();

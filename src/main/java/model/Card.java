@@ -31,6 +31,10 @@ public class Card {
 		return false;
 	}
 	
+	public CardState getState(){
+		return this.cardState;
+	}
+	
 	public void changeState(){
 		if (this.cardState==CardState.NOVISIBLE)
 		{
@@ -62,30 +66,12 @@ public class Card {
 		return this.caracter;
 	}
 	
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + caracter;
-		result = prime * result + ((type == null) ? 0 : type.hashCode());
-		return result;
+	public boolean sameSuit(Card card)
+	{
+		return this.getType() == card.getType();
 	}
+	
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Card other = (Card) obj;
-		if (caracter != other.caracter)
-			return false;
-		if (type != other.type)
-			return false;
-		return true;
-	}
+
 
 }

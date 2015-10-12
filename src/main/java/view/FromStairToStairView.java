@@ -16,7 +16,7 @@ private FromStairToStairController fromStairToStairController;
 	public void render(){
 		int originStair;
 		int destinationStair;
-		originStair = new LimitedIntDialog("A que escalera?", 1,
+		originStair = new LimitedIntDialog("De que escalera?", 1,
 				Stair.STAIRS).read();
 		destinationStair = new LimitedIntDialog("A que escalera?", 1,
 				Stair.STAIRS).read();
@@ -26,9 +26,9 @@ private FromStairToStairController fromStairToStairController;
 		}
 		else
 		{
-			if (this.fromStairToStairController.isPosibleMove(originStair, destinationStair))
+			if (this.fromStairToStairController.isPosibleMove(originStair-1, destinationStair-1))
 			{
-				this.fromStairToStairController.moveFromStairToStair(originStair, destinationStair);
+				this.fromStairToStairController.moveFromStairToStair(originStair-1, destinationStair-1);
 			}
 			else
 			{

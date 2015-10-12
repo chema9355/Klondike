@@ -23,6 +23,10 @@ public class Suit {
 		assert type != null;
 		return cards.get(type.ordinal()).get(cards.get(type.ordinal()).size()-1);	
 		}
+	
+	public Card lastCard(int suit) {
+		return cards.get(suit).get(cards.get(suit).size()-1);	
+		}
 		
 	public boolean finish() {
 		int totalCards = 0;
@@ -38,12 +42,20 @@ public class Suit {
 		cards.get(type.ordinal()).add(card);
 	}
 	
-	public void remove (Type type){
+	public void removeLast (Type type){
 		cards.get(type.ordinal()).remove(cards.get(type.ordinal()).size()-1);
+	}
+	
+	public void removeLast (int suit){
+		cards.get(suit).remove(cards.get(suit).size()-1);
 	}
 	
 	public boolean isEmpty (Type type){
 		return this.cards.get(type.ordinal()).isEmpty();
+	}
+	
+	public boolean isEmpty (int suit){
+		return this.cards.get(suit).isEmpty();
 	}
 	
 	public Map<Integer, List<Card>> getCards(){
