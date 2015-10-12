@@ -1,23 +1,21 @@
 package model;
 
-
-
 public class LimitedIntDialog {
-	
-private String title;
-	
+
+	private String title;
+
 	private ClosedInterval limits;
-	
-	public LimitedIntDialog(String title, int min, int max){
+
+	public LimitedIntDialog(String title, int min, int max) {
 		this.limits = new ClosedInterval(min, max);
 		this.title = title + " " + limits + ": ";
 	}
-	
-	public LimitedIntDialog(String title, int max){
+
+	public LimitedIntDialog(String title, int max) {
 		this(title, 1, max);
 	}
-	
-	public int read(){
+
+	public int read() {
 		IO io = new IO();
 		int value;
 		boolean ok;

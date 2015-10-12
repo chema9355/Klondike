@@ -6,24 +6,17 @@ import view.GameView;
 import view.StartView;
 
 public class Klondike {
-	
+
 	private Deck deck;
-	
 	private Deck discard;
-	
 	private Stair stair;
-	
 	private Suit suit;
-	
 	private StartController startController;
-	
 	private ColocateControllFactory colocateControllFactory;
-	
 	private StartView startView;
-		
 	private GameView gameView;
-	
-	public Klondike(){
+
+	public Klondike() {
 		deck = new Deck();
 		discard = new Deck();
 		stair = new Stair();
@@ -33,7 +26,7 @@ public class Klondike {
 		startController = new StartController(deck, discard, stair, suit, colocateControllFactory);
 		startView = new StartView(startController);
 	}
-	
+
 	public void play() {
 		startView.render();
 		gameView.render();

@@ -1,25 +1,20 @@
 package view;
 
-import model.Deck;
-
 public class DeckView {
 
-	private Deck deck;
-	
-	public DeckView (Deck deck){
+	private DeckForView deck;
+
+	public DeckView(DeckForView deck) {
 		this.deck = deck;
 	}
-	
-	public void render(){
+
+	public void render() {
 		System.out.print("Baraja: ");
-		if (this.deck.isEmpty())
-		{
+		if (this.deck.isEmpty()) {
 			System.out.println("Vacio");
-		}
-		else
-		{
+		} else {
 			System.out.println("[X,X]");
 		}
 	}
-	
+
 }

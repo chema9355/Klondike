@@ -4,21 +4,18 @@ import controller.Controller;
 import controller.FromDiscardToDeckController;
 
 public class FromDiscardToDeckView {
-	
+
 	private FromDiscardToDeckController fromDiscardToDeckController;
-	
-	public FromDiscardToDeckView (Controller controller){
+
+	public FromDiscardToDeckView(Controller controller) {
 		this.fromDiscardToDeckController = (FromDiscardToDeckController) controller;
 	}
-	
-	public void render(){
-		if(this.fromDiscardToDeckController.deckEmpty())
-		{
+
+	public void render() {
+		if (this.fromDiscardToDeckController.deckEmpty()) {
 			this.fromDiscardToDeckController.moveFromDiscardToDeck();
 			System.out.println("Carta movida de descarte a baraja");
-		}
-		else
-		{
+		} else {
 			System.out.println("No se puede la baraja no esta vacia");
 		}
 		System.out.println("");
@@ -29,5 +26,3 @@ public class FromDiscardToDeckView {
 	}
 
 }
-
-

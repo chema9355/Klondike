@@ -3,14 +3,14 @@ package view;
 import controller.StartController;
 
 public class StartView {
-	
+
 	private StartController startController;
-	
-	public StartView(StartController startController){
+
+	public StartView(StartController startController) {
 		this.startController = startController;
 	}
-	
-	public void render(){
+
+	public void render() {
 		startController.control();
 		System.out.println("BIENVENIDO");
 		new DeckView(startController.getDeck()).render();

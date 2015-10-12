@@ -1,15 +1,11 @@
 package view;
 
-;
-
 public class ExitView {
-	
 
-	
-	public ExitView (){
+	public ExitView() {
 	}
-	
-	public void render(){
+
+	public void render() {
 		System.out.println("Adios");
 		System.exit(0);
 	}

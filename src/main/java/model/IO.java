@@ -5,8 +5,7 @@ import java.io.InputStreamReader;
 
 public class IO {
 
-	private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-			System.in));
+	private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
 	public String readString(String title) {
 		String input = null;
@@ -127,8 +126,7 @@ public class IO {
 		boolean ok = false;
 		do {
 			String input = this.readString(title);
-			if (input.equalsIgnoreCase("true")
-					|| input.equalsIgnoreCase("false")) {
+			if (input.equalsIgnoreCase("true") || input.equalsIgnoreCase("false")) {
 				booleanValue = Boolean.valueOf(input).booleanValue();
 				ok = true;
 			} else {
@@ -215,7 +213,6 @@ public class IO {
 	}
 
 	private void writeError(String formato) {
-		System.out.println("ERROR DE FORMATO! "
-				+ "Introduzca un valor con formato " + formato + ".");
+		System.out.println("ERROR DE FORMATO! " + "Introduzca un valor con formato " + formato + ".");
 	}
 }

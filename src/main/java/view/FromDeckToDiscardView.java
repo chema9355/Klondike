@@ -2,24 +2,19 @@ package view;
 
 import controller.Controller;
 import controller.FromDeckToDiscardController;
-import model.Card;
-
 
 public class FromDeckToDiscardView {
-	
+
 	private FromDeckToDiscardController fromDeckToDiscardController;
-	
-	public FromDeckToDiscardView (Controller controller){
+
+	public FromDeckToDiscardView(Controller controller) {
 		this.fromDeckToDiscardController = (FromDeckToDiscardController) controller;
 	}
-	
-	public void render(){
-		if(fromDeckToDiscardController.deckEmpty())
-		{
+
+	public void render() {
+		if (fromDeckToDiscardController.deckEmpty()) {
 			System.out.println("No se puede, la baraja está vacia");
-		}
-		else
-		{
+		} else {
 			this.fromDeckToDiscardController.moveFromDeckToDiscard();
 			System.out.println("Carta movida de bajara a descarte");
 		}
@@ -31,5 +26,3 @@ public class FromDeckToDiscardView {
 	}
 
 }
-
-

@@ -1,7 +1,6 @@
 package model;
 
 public enum CardState {
-VISIBLE,
-NOVISIBLE;
+	VISIBLE, NOVISIBLE;
 
 }
