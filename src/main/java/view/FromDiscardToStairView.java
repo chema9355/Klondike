@@ -3,7 +3,6 @@ package view;
 
 import controller.Controller;
 import controller.FromDiscardToStairController;
-import model.Card;
 import model.LimitedIntDialog;
 import model.Stair;
 
@@ -17,7 +16,6 @@ public class FromDiscardToStairView {
 	
 	public void render(){
 		int stair;
-		Card discardCard;
 		if (this.fromDiscardToStairController.discardEmpty())
 		{
 			System.out.println("El decarte esta vacio");
@@ -26,10 +24,9 @@ public class FromDiscardToStairView {
 		{
 			stair = new LimitedIntDialog("A que escalera?", 1,
 					Stair.STAIRS).read();
-			discardCard = this.fromDiscardToStairController.getDiscardCard();
-			if (this.fromDiscardToStairController.isPosibleMove(discardCard, stair-1))
+			if (this.fromDiscardToStairController.isPosibleMove(stair-1))
 			{
-				this.fromDiscardToStairController.moveFromDiscardToStair(discardCard, stair-1);
+				this.fromDiscardToStairController.moveFromDiscardToStair(stair-1);
 				System.out.println("Carta movida de descarte a escalera");
 			}
 			else

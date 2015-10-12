@@ -21,22 +21,22 @@ public class FromStairToSuitController extends MoveController{
 		return this.getStair().isEmpty(stair);
 	}
 
-	public boolean isPosibleMove(int stair, int suit) {
+	public boolean isPosibleMove(int stair) {
 		Card cardStair;
 		Card cardSuit;
+		cardStair = this.getStair().lastCard(stair);
 		if(this.getStair().isEmpty(stair))
 		{
 			return false;
 		}
-		else if (this.getSuit().getCards().get(suit).isEmpty() && this.getStair().lastCard(stair).getValue() == 'A')
+		else if (this.getSuit().isEmpty(cardStair.getType()) && this.getStair().lastCard(stair).getValue() == 'A')
 		{
 			return true;
 		}
 		else
 		{
-			cardStair = this.getStair().lastCard(stair);
-			cardSuit = this.getSuit().lastCard(suit);
-			if(cardStair.sameSuit(cardSuit) && cardSuit.connect(cardStair))
+			cardSuit = this.getSuit().lastCard(cardStair.getType());
+			if(cardSuit.connect(cardStair))
 			{
 				return true;
 			}
@@ -44,11 +44,11 @@ public class FromStairToSuitController extends MoveController{
 		return false;
 	}
 
-	public void moveFromStairToSuit(int stair, int suit) {
+	public void moveFromStairToSuit(int stair) {
 		Card cardStair;
 		cardStair = this.getStair().lastCard(stair);
 		this.getStair().removeLast(stair);
-		this.getSuit().getCards().get(suit).add(cardStair);
+		this.getSuit().putCard(cardStair, cardStair.getType());
 	}
 
 }

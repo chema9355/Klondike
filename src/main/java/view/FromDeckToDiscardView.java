@@ -14,15 +14,13 @@ public class FromDeckToDiscardView {
 	}
 	
 	public void render(){
-		Card card;
 		if(fromDeckToDiscardController.deckEmpty())
 		{
 			System.out.println("No se puede, la baraja está vacia");
 		}
 		else
 		{
-			card = this.fromDeckToDiscardController.getCardFromDeck();
-			this.fromDeckToDiscardController.moveFromDeckToDiscard(card);
+			this.fromDeckToDiscardController.moveFromDeckToDiscard();
 			System.out.println("Carta movida de bajara a descarte");
 		}
 		System.out.println("");

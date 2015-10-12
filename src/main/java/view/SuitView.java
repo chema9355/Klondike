@@ -32,6 +32,7 @@ private Suit suit;
 				{
 					System.out.print(elem.Paint());
 				} 
+			    System.out.println("");
 			}
 		}
 

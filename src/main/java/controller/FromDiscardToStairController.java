@@ -16,21 +16,25 @@ public class FromDiscardToStairController extends MoveController{
 		return this.getDiscard().isEmpty();
 	}
 	
-	public boolean isPosibleMove(Card discardCard, int stair){
+	public boolean isPosibleMove(int stair){
+		Card discardCard;
 		Card stairCard;
+		discardCard = this.getDiscard().getLastCard();
 		if(this.getStair().isEmpty(stair) && discardCard.getValue() == 'A')
 		{
 			return true;
 		}
 		stairCard = this.getStair().lastCard(stair);
-		if (stairCard.connect(discardCard))
+		if (discardCard.connect(stairCard))
 		{
 		return true;
 		}
 		return false;
 	}
 	
-	public void moveFromDiscardToStair(Card discardCard, int stair){
+	public void moveFromDiscardToStair(int stair){
+		Card discardCard;
+		discardCard = this.getDiscard().getLastCard();
 		this.getDiscard().removeCard(discardCard);
 		this.getStair().putCard(discardCard, stair);
 	}

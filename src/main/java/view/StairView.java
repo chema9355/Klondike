@@ -24,7 +24,7 @@ public class StairView {
 		int showStair = stair+1;
 		if (this.stair.isEmpty(stair))
 			{
-				System.out.println("Escalera " + stair+1 + " Vacia");
+				System.out.println("Escalera " + showStair + " Vacia");
 			}
 		else
 			{

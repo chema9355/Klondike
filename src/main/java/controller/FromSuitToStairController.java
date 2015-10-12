@@ -2,6 +2,7 @@ package controller;
 
 
 import model.Card;
+import model.CardState;
 import model.Deck;
 import model.Stair;
 import model.Suit;
@@ -29,7 +30,7 @@ public class FromSuitToStairController extends MoveController{
 		{
 		stairCard = this.getStair().lastCard(stair);
 		suitCard = this.getSuit().lastCard(suit);
-		if (suitCard.connect(stairCard))
+		if (suitCard.connect(stairCard) || this.getStair().lastCard(stair).getState() == CardState.NOVISIBLE)
 			{
 				return true;
 			}

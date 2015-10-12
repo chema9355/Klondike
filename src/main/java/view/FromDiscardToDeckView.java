@@ -2,7 +2,6 @@ package view;
 
 import controller.Controller;
 import controller.FromDiscardToDeckController;
-import model.Card;
 
 public class FromDiscardToDeckView {
 	
@@ -13,11 +12,9 @@ public class FromDiscardToDeckView {
 	}
 	
 	public void render(){
-		Card card;
 		if(this.fromDiscardToDeckController.deckEmpty())
 		{
-			card = this.fromDiscardToDeckController.getCardFromDiscard();
-			this.fromDiscardToDeckController.moveFromDiscardToDeck(card);
+			this.fromDiscardToDeckController.moveFromDiscardToDeck();
 			System.out.println("Carta movida de descarte a baraja");
 		}
 		else

@@ -29,6 +29,7 @@ private FromStairToStairController fromStairToStairController;
 			if (this.fromStairToStairController.isPosibleMove(originStair-1, destinationStair-1))
 			{
 				this.fromStairToStairController.moveFromStairToStair(originStair-1, destinationStair-1);
+				System.out.println("Carta movida");
 			}
 			else
 			{

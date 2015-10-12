@@ -12,19 +12,26 @@ public class FromDiscardToSuitController extends MoveController{
 		super(deck, discard, stair, suit);
 	}
 	
-	public void moveFromDiscardToSuit (Card discardCard, Card suitCard){
+	public void moveFromDiscardToSuit (){
+		Card discardCard;
+		discardCard = this.getDiscard().getLastCard();
 		this.getDiscard().removeCard(discardCard);
-		this.getSuit().AddCard(discardCard, discardCard.getType());
+		this.getSuit().putCard(discardCard, discardCard.getType());
 	}
 	
-	public boolean isPosibleMove (Card discardCard, Card suitCard){
-		if(this.getSuit().isEmpty(discardCard.getType()) && discardCard.getValue()=='A')
+	public boolean isPosibleMove (){
+		Card discardCard = this.getDiscard().getLastCard();
+		if (this.getDiscard().isEmpty())
+		{
+			return false;
+		}
+		else if(this.getSuit().isEmpty(discardCard.getType()) && discardCard.getValue()=='A')
 		{
 			return true;
 		}
 		else
 		{
-			if (suitCard.connect(discardCard) && suitCard.sameSuit(discardCard))
+			if (this.getSuit().lastCard(discardCard.getType()).connect(discardCard) && this.getSuit().lastCard(discardCard.getType()).sameSuit(discardCard))
 			{
 				return true;
 			}
@@ -32,10 +39,6 @@ public class FromDiscardToSuitController extends MoveController{
 		return false;
 	}
 	
-	public void getCards(Card discardCard, Card suitCard){
-		discardCard = this.getDiscard().getLastCard();
-		suitCard = this.getSuit().lastCard(discardCard.getType());
-	}
 	
 	public boolean emptyDiscard(){
 	return this.getDiscard().isEmpty();

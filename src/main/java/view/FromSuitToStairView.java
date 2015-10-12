@@ -24,6 +24,7 @@ private FromSuitToStairController fromSuitToStairController;
 		if(this.fromSuitToStairController.isPosibleMove(suit-1,stair-1))
 		{
 			this.fromSuitToStairController.moveFromSuitToStair(suit-1,stair-1);
+			System.out.println("Carta movida");
 		}
 		else
 		{

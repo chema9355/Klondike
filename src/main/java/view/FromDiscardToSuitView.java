@@ -2,7 +2,6 @@ package view;
 
 import controller.Controller;
 import controller.FromDiscardToSuitController;
-import model.Card;
 
 
 public class FromDiscardToSuitView {
@@ -14,23 +13,14 @@ private FromDiscardToSuitController fromDiscardToSuitController;
 	}
 	
 	public void render(){
-		Card discardCard = null;
-		Card suitCard = null;
-		if (this.fromDiscardToSuitController.emptyDiscard())
+		if (this.fromDiscardToSuitController.isPosibleMove())
 		{
-			System.out.println("El decarte esta vacio");
-		}
+			this.fromDiscardToSuitController.moveFromDiscardToSuit();
+			System.out.println("Carta movida");
+		}	
 		else
 		{
-			this.fromDiscardToSuitController.getCards(discardCard, suitCard);
-			if (this.fromDiscardToSuitController.isPosibleMove(discardCard, suitCard))
-			{
-				this.fromDiscardToSuitController.moveFromDiscardToSuit(discardCard, suitCard);
-			}	
-			else
-			{
-				System.out.println("Movimiento no valido, la carta que se intenta mover no es un numero menor al la ultima de la escalera");
-			}
+			System.out.println("Movimiento no valido");
 		}
 		System.out.println("");
 	

@@ -36,7 +36,7 @@ public class Suit {
 		return totalCards == Card.TotalCards;
 	}
 	
-	public void AddCard (Card card, Type type){
+	public void putCard (Card card, Type type){
 		assert card != null;
 		assert type != null;
 		cards.get(type.ordinal()).add(card);

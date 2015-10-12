@@ -33,7 +33,7 @@ public class ColocateControllFactory {
 		this.moveControllers[1] = new FromDiscardToDeckController(deck, discard, stair, suit);
 		this.moveControllers[2] = new FromDiscardToSuitController(deck, discard, stair, suit);
 		this.moveControllers[3] = new FromDiscardToStairController(deck, discard, stair, suit);
-		this.moveControllers[4] = new FromDiscardToSuitController(deck, discard, stair, suit);
+		this.moveControllers[4] = new FromStairToSuitController(deck, discard, stair, suit);
 		this.moveControllers[5] = new FromStairToStairController(deck, discard, stair, suit);
 		this.moveControllers[6] = new FromSuitToStairController(deck, discard, stair, suit);
 		this.moveControllers[7] = new TurnOverController(deck, discard, stair, suit);

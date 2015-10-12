@@ -17,10 +17,12 @@ public class FromDiscardToDeckController extends DeckAndDiscardController{
 		return this.getDiscard().getLastCard();
 	}
 	
-	public void moveFromDiscardToDeck(Card card){
-		this.getDiscard().removeCard(card);
-		this.getDeck().put(card);
-		card.changeState();
+	public void moveFromDiscardToDeck(){
+		Card discardCard;
+		discardCard = this.getDiscard().getLastCard();
+		this.getDiscard().removeCard(discardCard);
+		this.getDeck().put(discardCard);
+		discardCard.changeState();
 	}
 
 	@Override
